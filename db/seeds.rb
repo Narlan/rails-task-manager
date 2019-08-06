@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Task.delete_all
+
+20.times do
+  task = Task.new(title: Faker::Commerce.department, details: Faker::Commerce.color, completed: false)
+  task.save
+  puts "... done one!"
+end
